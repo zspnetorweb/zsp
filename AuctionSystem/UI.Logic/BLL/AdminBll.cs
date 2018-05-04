@@ -13,7 +13,7 @@ namespace UI.Logic.BLL
 	public static class AdminBll
 	{
 		private static readonly SqlSugarClient db = AuctionSystemContext.Instance;
-
+		private static RedisCache cache = new RedisCache();
 		/// <summary>
 		/// 登录验证
 		/// </summary>
