@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 namespace UI.Logic.Model
 {
 	/// <summary>
-	/// 商品收藏表
+	/// 广告
 	/// </summary>
-	public class MemberFavorite
+	public class Banner
 	{
 		/// <summary>
 		/// ID
 		/// </summary>
 		public int Id { get; set; }
 		/// <summary>
-		/// 商品ID
+		/// 轮播图
 		/// </summary>
-		public int ProductId { get; set; }
+		public string Images { get; set; }
 		/// <summary>
-		/// 会员ID
+		/// 备注
 		/// </summary>
-		public int MemberId { get; set; }
+		public string Remark { get; set; }
 	}
 }

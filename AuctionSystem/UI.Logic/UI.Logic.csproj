@@ -39,9 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\ArticleReviewStatus.cs" />
+    <Compile Include="Enum\OrderStatus.cs" />
+    <Compile Include="Model\Article.cs" />
+    <Compile Include="Model\Banner.cs" />
     <Compile Include="Model\Member.cs" />
+    <Compile Include="Model\MemberComment.cs" />
     <Compile Include="Model\MemberFavorite.cs" />
     <Compile Include="Model\MemberInfo.cs" />
+    <Compile Include="Model\MemberMessage.cs" />
+    <Compile Include="Model\MemberReply.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductClass.cs" />
