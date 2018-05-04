@@ -9,8 +9,12 @@ namespace UI.Logic.Model
 	/// <summary>
 	/// 会员信息表
 	/// </summary>
-	public class MemberInfo
+	public class MemberDetails
 	{
+		public MemberDetails()
+		{
+			
+		}
 		/// <summary>
 		/// 会员信息ID
 		/// </summary>

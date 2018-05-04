@@ -1,0 +1,26 @@
+﻿@model List<UI.Logic.Model.MemberDetails>
+@{
+    ViewBag.Title = "会员列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.Id</th>
+            <th>@item.RealName</th>
+            <th>@item.Birthdate</th>
+            <th>@item.Email</th>
+            <th>@item.ShippingAddress</th>
+        </tr>
+    }
+</table>
