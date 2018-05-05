@@ -21,5 +21,11 @@ namespace Admin.Controllers
 			var result = AdminBll.LoginCheck(model);
 		    return Json(result);
 	    }
+
+	    public ActionResult MenuList()
+	    {
+		    ViewData.Model = AdminBll.GetMenuList();
+		    return View("_Layout");
+	    }
     }
 }

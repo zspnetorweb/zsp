@@ -12,9 +12,12 @@ namespace Admin.Controllers
 	[LoginFilter]
     public class MemberController : Controller
     {
+		public ActionResult Index()
+		{
+			return View();
+		}
 
-        // GET: Member
-        public ActionResult Index()
+		public ActionResult MemberDetailsList()
         {
 	        var list = MemberBll.MemberInfoList();
             return View(list);

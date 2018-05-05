@@ -60,6 +60,7 @@
     <Compile Include="Model\MemberDetails.cs" />
     <Compile Include="Model\MemberMessage.cs" />
     <Compile Include="Model\MemberReply.cs" />
+    <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductClass.cs" />
