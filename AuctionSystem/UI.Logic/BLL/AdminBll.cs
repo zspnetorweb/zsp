@@ -7,6 +7,7 @@ using SqlSugar;
 using UI.Logic.Model;
 using UI.Logic.Model.Context;
 using Library;
+using System.Web;
 
 namespace UI.Logic.BLL
 {
@@ -19,7 +20,7 @@ namespace UI.Logic.BLL
 		/// </summary>
 		/// <param name="model"></param>
 		/// <returns></returns>
-		public static object LoginCheck(Administrator model)
+		public static AjaxResult LoginCheck(Administrator model)
 		{
 			var ar = new AjaxResult()
 			{
@@ -33,6 +34,7 @@ namespace UI.Logic.BLL
 				var count = db.Queryable<Administrator>().Count(l=>l.UserName==model.UserName&&l.Password==model.Password);
 				if (count > 0)
 				{
+					HttpContext.Current.Session["Admin_UserName"] = model.UserName;
 					ar.Code = 1;
 					ar.Title = "登录成功";
 					ar.Content = "正在进入首页";
