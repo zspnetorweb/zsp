@@ -138,6 +138,7 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\IBaseController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Filter\LoginFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -169,6 +170,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Article\ArticleList.cshtml" />
+    <Content Include="Views\Order\OrderList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

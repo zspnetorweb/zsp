@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace Admin.Controllers
 {
-    public class ArticleController : IBaseController
+    public class OrderController : Controller
     {
-        // GET: Article
-		public ActionResult ArticleList()
+        // GET: Order
+		public ActionResult OrderList()
         {
             return View();
         }
