@@ -10,10 +10,11 @@ using UI.Logic.BLL;
 namespace Admin.Controllers
 {
 	[LoginFilter]
-    public class MemberController : Controller
+    public class MemberController : IBaseController
     {
 		public ActionResult Index()
 		{
+			
 			return View();
 		}
 

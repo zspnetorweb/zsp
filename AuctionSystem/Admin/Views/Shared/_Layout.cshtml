@@ -1,5 +1,4 @@
-﻿@model List<UI.Logic.Model.Menu>
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,11 +9,24 @@
         }
     </title>
     <link href="~/Content/bootstrap.min.css?v=3.3.6" rel="stylesheet" />
-    <link href="~/Content/HAdmin/css/font-awesome.css?v=4.4.0" rel="stylesheet" />
-    <link href="~/Content/HAdmin/css/animate.css" rel="stylesheet" />
-    <link href="~/Content/HAdmin/css/style.css?v=4.1.0" rel="stylesheet" />
+    <link href="~/Content/HAdmin/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/HAdmin/animate.css" rel="stylesheet" />
+    <link href="~/Content/HAdmin/style.css" rel="stylesheet" />
+    <link href="~/Content/HAdmin/layer/skin/layer.css" rel="stylesheet" />
 
-    
+    @*全局js*@
+    <script src="~/Content/jquery.min.js?v=2.1.4"></script>
+    <script src="~/Content/bootstrap.min.js?v=3.3.6"></script>
+    <script src="~/Content/HAdmin/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/Content/HAdmin/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/Content/HAdmin/layer/layer.min.js"></script>
+
+    @*自定义js*@
+    <script src="~/Content/HAdmin/hAdmin.js?v=4.1.0"></script>
+    <script type="text/javascript" src="~/Content/HAdmin/index.js"></script>
+
+    @*第三方插件*@
+    @*<script src="~/Content/HAdmin/pace/pace.min.js"></script>*@
 
 </head>
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow: hidden">
@@ -48,9 +60,10 @@
                             <span class="nav-label">主页</span>
                         </a>
                     </li>
-                    @if (Model != null)
+                    <li class="line dk"></li>
+                    @if (ViewBag.iMenuList != null)
                     {
-                        foreach (var item in Model)
+                        foreach (var item in ViewBag.iMenuList)
                         {
                             <li>
                                 <a href="@item.CodeUrl">
@@ -59,7 +72,7 @@
                                     <span class="fa arrow"></span>
                                 </a>
                                 <ul class="nav nav-second-level">
-                                    @foreach (var subItem in item.SubMenus)
+                                    @foreach (var subItem in item.MenuLists)
                                     {
                                         <li>
                                             <a class="J_menuItem" href="@subItem.CodeUrl">@subItem.Name</a>
@@ -68,30 +81,33 @@
 
                                 </ul>
                             </li>
+                            <li class="line dk"></li>
                         }
                     }
                 </ul>
             </div>
         </nav>
+        @*右侧部分*@
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-info " href="#"><i class="fa fa-bars"></i> </a>
+                        
+                    </div>
+                </nav>
+            </div>
+            <div class="row J_mainContent" id="content-main">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="container body-content">
-        @RenderBody()
-    </div>
-
-    @*全局js*@
-    <script src="~/Content/jquery.min.js?v=2.1.4"></script>
-    <script src="~/Content/bootstrap.min.js?v=3.3.6"></script>
-    <script src="~/Content/HAdmin/js/metisMenu/jquery.metisMenu.js"></script>
-    <script src="~/Content/HAdmin/js/slimscroll/jquery.slimscroll.min.js"></script>
-    <script src="~/Content/HAdmin/js/layer/layer.min.js"></script>
-
-    @*自定义js*@
-    <script src="~/Content/HAdmin/hAdmin.js?v=4.1.0"></script>
-    <script type="text/javascript" src="~/Content/HAdmin/index.js"></script>
-
-    @*第三方插件*@
-    <script src="~/Content/HAdmin/js/pace/pace.min.js"></script>
+    
 
 </body>
 </html>

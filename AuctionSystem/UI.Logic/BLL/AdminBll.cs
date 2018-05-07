@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SqlSugar;
-using UI.Logic.Model;
-using UI.Logic.Model.Context;
-using Library;
 using System.Web;
-using UI.Logic.Enum;
+using System.Web.UI.WebControls;
+using Library;
+using UI.Logic.Model;
+using UI.Logic.Model.Admin;
+using UI.Logic.Model.Context;
 
 namespace UI.Logic.BLL
 {
@@ -53,25 +51,39 @@ namespace UI.Logic.BLL
 		/// 获取菜单列表
 		/// </summary>
 		/// <returns></returns>
-		public static List<Menu> GetMenuList()
+		public static List<IMenuList> GetMenuList()
 		{
 			var db = AuctionSystemContext.Instance;
-			if (cache.Get<List<Menu>>("MenuList") == null)
+			List<MenuList> menuList = null;
+			if (cache.Get<List<MenuList>>("MenuList") == null)
 			{
-				var list = db.Queryable<Menu>().ToList();
-				cache.Insert("MenuList",list);
+				menuList = db.Queryable<MenuList>().ToList();
+				cache.Insert("MenuList", menuList);
 			}
-				var listMenu = cache.Get<List<Menu>>("MenuList").Where(l=>l.ParentId==0).ToList();
-				foreach (var item in listMenu)
+			else
+				menuList = cache.Get<List<MenuList>>("MenuList");
+			var listFirstMenu = menuList.Where(l => l.ParentId == 0);
+			var iMenuList = new List<IMenuList>();
+			foreach (var item in listFirstMenu)
+			{
+				var iModel = new IMenuList()
 				{
-					item.CodeUrl = String.Format("/{0}/{1}",item.CodeUrl.Split('_')[0],item.CodeUrl.Split('_')[1]);
-					item.SubMenus = cache.Get<List<Menu>>("MenuList").Where(l => l.ParentId == item.Id).ToList();
-					foreach (var subMenu in item.SubMenus)
-					{
-						subMenu.CodeUrl = String.Format("/{0}/{1}",subMenu.CodeUrl.Split('_')[0],subMenu.CodeUrl.Split('_')[1]);
-					}
+					Name = item.Name,
+					CodeUrl = item.CodeUrl,
+					ParentId = item.ParentId,
+					MenuLists = menuList.Where(l=>l.ParentId==item.Id).ToList()
+				};
+
+				iMenuList.Add(iModel);
+			}
+			foreach (var item in iMenuList)
+			{
+				foreach (var itemList in item.MenuLists)
+				{
+					itemList.CodeUrl = string.Format("/{0}/{1}", itemList.CodeUrl.Split('_')[0], itemList.CodeUrl.Split('_')[1]);
 				}
-			return listMenu ?? new List<Menu>();
+			}
+			return iMenuList;
 		}
 	}
 }

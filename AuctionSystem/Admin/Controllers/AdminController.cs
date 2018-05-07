@@ -11,6 +11,8 @@ namespace Admin.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
+
+
 	    public ActionResult Login()
 	    {
 		    return View();
@@ -22,10 +24,5 @@ namespace Admin.Controllers
 		    return Json(result);
 	    }
 
-	    public ActionResult MenuList()
-	    {
-		    ViewData.Model = AdminBll.GetMenuList();
-		    return View("_Layout");
-	    }
     }
 }

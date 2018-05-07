@@ -49,21 +49,22 @@
     <Compile Include="BLL\MemberBll.cs" />
     <Compile Include="Enum\ArticleReviewStatus.cs" />
     <Compile Include="Enum\OrderStatus.cs" />
-    <Compile Include="Model\Administrator.cs" />
+    <Compile Include="Model\Admin\Administrator.cs" />
+    <Compile Include="Model\Admin\IMenuList.cs" />
+    <Compile Include="Model\Admin\MenuList.cs" />
     <Compile Include="Model\AjaxResult.cs" />
-    <Compile Include="Model\Article.cs" />
-    <Compile Include="Model\Banner.cs" />
+    <Compile Include="Model\Article\Article.cs" />
+    <Compile Include="Model\Banner\Banner.cs" />
     <Compile Include="Model\Context\AuctionSystemContext.cs" />
-    <Compile Include="Model\Member.cs" />
-    <Compile Include="Model\MemberComment.cs" />
-    <Compile Include="Model\MemberFavorite.cs" />
-    <Compile Include="Model\MemberDetails.cs" />
-    <Compile Include="Model\MemberMessage.cs" />
-    <Compile Include="Model\MemberReply.cs" />
-    <Compile Include="Model\Menu.cs" />
-    <Compile Include="Model\Order.cs" />
-    <Compile Include="Model\Product.cs" />
-    <Compile Include="Model\ProductClass.cs" />
+    <Compile Include="Model\Member\Member.cs" />
+    <Compile Include="Model\Member\MemberComment.cs" />
+    <Compile Include="Model\Member\MemberFavorite.cs" />
+    <Compile Include="Model\Member\MemberDetails.cs" />
+    <Compile Include="Model\Member\MemberMessage.cs" />
+    <Compile Include="Model\Member\MemberReply.cs" />
+    <Compile Include="Model\Order\Order.cs" />
+    <Compile Include="Model\Product\Product.cs" />
+    <Compile Include="Model\Product\ProductClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

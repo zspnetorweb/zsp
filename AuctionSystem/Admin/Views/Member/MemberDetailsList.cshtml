@@ -1,8 +1,47 @@
 ﻿
 @{
-    ViewBag.Title = "MemberDetailsList";
+    ViewBag.Title = "会员列表";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>MemberDetailsList</h2>
+<div class="ibox-title">
+    <h5>@ViewBag.Title</h5>
+    @*<div class="ibox-tools">
+            <a class="collapse-link">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="table_basic.html#">
+                <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li>
+                    <a href="table_basic.html#">选项1</a>
+                </li>
+                <li>
+                    <a href="table_basic.html#">选项2</a>
+                </li>
+            </ul>
+            <a class="close-link">
+                <i class="fa fa-times"></i>
+            </a>
+        </div>*@
+</div>
+    <div class="ibox-content">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <td>Id</td>
+                <td>用户名</td>
+                <td>真实姓名</td>
+                <td>手机号码</td>
+                <td>邮箱</td>
+                <td>收货地址</td>
+            </tr>
+            </thead>
+            <tbody>
+            
+            </tbody>
+        </table>
+    </div>
+
 
