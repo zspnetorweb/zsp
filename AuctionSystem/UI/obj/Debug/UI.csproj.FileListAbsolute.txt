@@ -42,6 +42,5 @@ C:\zsp\zsp\AuctionSystem\UI\bin\zh-Hans\System.Web.Webpages.Deployment.resources
 C:\zsp\zsp\AuctionSystem\UI\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
 C:\zsp\zsp\AuctionSystem\UI\bin\zh-Hans\System.Web.Helpers.resources.dll
 C:\zsp\zsp\AuctionSystem\UI\bin\zh-Hans\System.Web.Mvc.resources.dll
-C:\zsp\zsp\AuctionSystem\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
 C:\zsp\zsp\AuctionSystem\UI\obj\Debug\UI.dll
 C:\zsp\zsp\AuctionSystem\UI\obj\Debug\UI.pdb
