@@ -24,5 +24,10 @@ namespace Admin.Controllers
 		    return Json(result);
 	    }
 
+		public ActionResult Logout()
+		{
+			var result = AdminBll.Logout();
+			return Json(result,JsonRequestBehavior.AllowGet);
+		}
     }
 }

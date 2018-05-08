@@ -86,6 +86,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.min.js" />
+    <Content Include="Content\CScript\Public.js" />
     <Content Include="Content\HAdmin\content.js" />
     <Content Include="Content\CScript\Member.js" />
     <Content Include="Content\HAdmin\animate.css" />
@@ -182,7 +183,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\IBase\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Library\Library.csproj">

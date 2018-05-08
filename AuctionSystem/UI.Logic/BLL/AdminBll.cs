@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI.WebControls;
 using Library;
 using UI.Logic.Model;
 using UI.Logic.Model.Admin;
@@ -12,7 +11,7 @@ namespace UI.Logic.BLL
 {
 	public static class AdminBll
 	{
-		private static RedisCache cache = new RedisCache();
+		private static readonly RedisCache Cache = new RedisCache();
 		/// <summary>
 		/// 登录验证
 		/// </summary>
@@ -55,13 +54,13 @@ namespace UI.Logic.BLL
 		{
 			var db = AuctionSystemContext.Instance;
 			List<MenuList> menuList = null;
-			if (cache.Get<List<MenuList>>("MenuList") == null)
+			if (Cache.Get<List<MenuList>>("MenuList") == null)
 			{
 				menuList = db.Queryable<MenuList>().ToList();
-				cache.Insert("MenuList", menuList);
+				Cache.Insert("MenuList", menuList);
 			}
 			else
-				menuList = cache.Get<List<MenuList>>("MenuList");
+				menuList = Cache.Get<List<MenuList>>("MenuList");
 			var listFirstMenu = menuList.Where(l => l.ParentId == 0);
 			var iMenuList = new List<IMenuList>();
 			foreach (var item in listFirstMenu)
@@ -84,6 +83,27 @@ namespace UI.Logic.BLL
 				}
 			}
 			return iMenuList;
+		}
+		/// <summary>
+		/// 注销
+		/// </summary>
+		/// <returns></returns>
+		public static AjaxResult Logout()
+		{
+			var ar = new AjaxResult();
+			try
+			{
+				HttpContext.Current.Session["Admin_UserName"] = null;
+				ar.Code = 1;
+				ar.Title = "注销成功";
+				ar.Content = "请重新登录";
+			}
+			catch (Exception)
+			{
+				ar.Code = 0;
+				ar.Title = "注销失败";
+			}
+			return ar;
 		}
 	}
 }

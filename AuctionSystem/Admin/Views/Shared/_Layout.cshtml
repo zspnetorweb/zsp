@@ -13,17 +13,21 @@
     <link href="~/Content/HAdmin/animate.css" rel="stylesheet" />
     <link href="~/Content/HAdmin/style.css" rel="stylesheet" />
     <link href="~/Content/HAdmin/layer/skin/layer.css" rel="stylesheet" />
+    <link href="~/Content/HAdmin/sweetalert/sweetalert.css" rel="stylesheet" />
 
     @*全局js*@
     <script src="~/Content/jquery.min.js?v=2.1.4"></script>
     <script src="~/Content/bootstrap.min.js?v=3.3.6"></script>
+
     <script src="~/Content/HAdmin/metisMenu/jquery.metisMenu.js"></script>
     <script src="~/Content/HAdmin/slimscroll/jquery.slimscroll.min.js"></script>
     <script src="~/Content/HAdmin/layer/layer.min.js"></script>
+    <script src="~/Content/HAdmin/sweetalert/sweetalert.min.js"></script>
 
     @*自定义js*@
     <script src="~/Content/HAdmin/hAdmin.js?v=4.1.0"></script>
     <script type="text/javascript" src="~/Content/HAdmin/index.js"></script>
+    <script src="~/Content/CScript/Public.js"></script>
 
     @*第三方插件*@
     @*<script src="~/Content/HAdmin/pace/pace.min.js"></script>*@
@@ -43,13 +47,13 @@
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
                                     <span class="block m-t-xs" style="font-size: 20px">
-                                        <i class="fa fa-area-chart"></i>
-                                        <strong class="font-bold">hAdmin</strong>
+                                        <i class="fa fa-user-md"></i>
+                                        <strong class="font-bold">@Session["Admin_UserName"]</strong>
                                     </span>
                                 </span>
                             </a>
+                            <a class="btn btn-default btn-xs" onclick="Logout()">注销</a>
                         </div>
-                        <div class="logo-element">hAdmin</div>
                     </li>
                     <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
                         <span class="ng-scope">分类</span>
