@@ -30,6 +30,6 @@ namespace UI.Logic.Model
 		/// <summary>
 		/// 发生时间
 		/// </summary>
-		public DateTime HanppenTime { get; set; }
+		public DateTime HappenTime { get; set; }
 	}
 }

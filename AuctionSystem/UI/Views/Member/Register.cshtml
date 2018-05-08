@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户注册</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/HAdmin/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/HAdmin/animate.css" rel="stylesheet" />
+    <link href="~/Content/HAdmin/style.css" rel="stylesheet" />
+    <link href="~/Content/HAdmin/login.css" rel="stylesheet"/>
+
+    @*sweet alert*@
+    <link href="~/Content/HAdmin/sweetalert/sweetalert.css" rel="stylesheet"/>
+    <script src="~/Content/HAdmin/sweetalert/sweetalert.min.js"></script>
+
+    <script>
+        if (window.top !== window.self) {
+            window.top.location = window.location;
+        }
+    </script>
+</head>
+<body class="signin">
+    <div class="signinpanel">
+        <div class="row">
+            <div class="col-sm-12">
+                <form>
+                    <h4 class="no-margins">用户注册</h4>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="UserName" placeholder="请输入用户名" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="Password" placeholder="请输入密码" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="RePassword" placeholder="请再次输入密码" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="Phone" placeholder="请输入手机号码" />
+                    </div>
+                    <button type="button" class="btn btn-primary block full-width m-b" onclick="Register()">注 册</button>
+                    <p class="text-muted text-center">
+                        <small style="color: #000000">已经有账户了？</small><a href="/Member/Login">点此登录</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    @* 全局js *@
+    <script src="~/Content/jquery.min.js"></script>
+    <script src="~/Content/bootstrap.min.js"></script>
+
+    @* 自定义js *@
+    <script src="~/Content/CScript/Member.js"></script>
+</body>
+</html>

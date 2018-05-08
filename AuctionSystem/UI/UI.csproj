@@ -39,6 +39,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -80,11 +84,59 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min.js" />
+    <Content Include="Content\CScript\Member.js" />
+    <Content Include="Content\CScript\Public.js" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\HAdmin\animate.css" />
+    <Content Include="Content\HAdmin\content.js" />
+    <Content Include="Content\HAdmin\font-awesome.css" />
+    <Content Include="Content\HAdmin\hAdmin.js" />
+    <Content Include="Content\HAdmin\index.js" />
+    <Content Include="Content\HAdmin\layer\extend\layer.ext.js" />
+    <Content Include="Content\HAdmin\layer\laydate\laydate.js" />
+    <Content Include="Content\HAdmin\layer\laydate\need\laydate.css" />
+    <Content Include="Content\HAdmin\layer\laydate\skins\default\icon.png" />
+    <Content Include="Content\HAdmin\layer\laydate\skins\default\laydate.css" />
+    <Content Include="Content\HAdmin\layer\layer.min.js" />
+    <Content Include="Content\HAdmin\layer\layim\layim.css" />
+    <Content Include="Content\HAdmin\layer\layim\layim.js" />
+    <Content Include="Content\HAdmin\layer\layim\loading.gif" />
+    <Content Include="Content\HAdmin\layer\skin\default\icon-ext.png" />
+    <Content Include="Content\HAdmin\layer\skin\default\icon.png" />
+    <Content Include="Content\HAdmin\layer\skin\default\icon_ext.png" />
+    <Content Include="Content\HAdmin\layer\skin\default\loading-0.gif" />
+    <Content Include="Content\HAdmin\layer\skin\default\loading-1.gif" />
+    <Content Include="Content\HAdmin\layer\skin\default\loading-2.gif" />
+    <Content Include="Content\HAdmin\layer\skin\default\textbg.png" />
+    <Content Include="Content\HAdmin\layer\skin\default\xubox_ico0.png" />
+    <Content Include="Content\HAdmin\layer\skin\default\xubox_loading0.gif" />
+    <Content Include="Content\HAdmin\layer\skin\default\xubox_loading1.gif" />
+    <Content Include="Content\HAdmin\layer\skin\default\xubox_loading2.gif" />
+    <Content Include="Content\HAdmin\layer\skin\default\xubox_loading3.gif" />
+    <Content Include="Content\HAdmin\layer\skin\default\xubox_title0.png" />
+    <Content Include="Content\HAdmin\layer\skin\layer.css" />
+    <Content Include="Content\HAdmin\layer\skin\layer.ext.css" />
+    <Content Include="Content\HAdmin\layer\skin\moon\default.png" />
+    <Content Include="Content\HAdmin\layer\skin\moon\style.css" />
+    <Content Include="Content\HAdmin\login.css" />
+    <Content Include="Content\HAdmin\metisMenu\jquery.metisMenu.js" />
+    <Content Include="Content\HAdmin\pace\pace.min.js" />
+    <Content Include="Content\HAdmin\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Content\HAdmin\style.css" />
+    <Content Include="Content\HAdmin\sweetalert\sweetalert.css" />
+    <Content Include="Content\HAdmin\sweetalert\sweetalert.min.js" />
+    <Content Include="Content\Images\login-background.jpg" />
+    <Content Include="Content\jquery.min.js" />
+    <Content Include="Content\login.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -93,6 +145,21 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\Member\Login.cshtml" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\HAdmin\layer\layim\data\chatlog.json" />
+    <Content Include="Content\HAdmin\layer\layim\data\friend.json" />
+    <Content Include="Content\HAdmin\layer\layim\data\group.json" />
+    <Content Include="Content\HAdmin\layer\layim\data\groups.json" />
+    <Content Include="Views\Member\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -102,7 +169,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{2729666a-b222-4e96-8295-285dff54dfb9}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UI.Logic\UI.Logic.csproj">
+      <Project>{1873f89f-de09-46f3-9e79-d18952868141}</Project>
+      <Name>UI.Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

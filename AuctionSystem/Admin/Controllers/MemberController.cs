@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Admin.Filter;
+using UI.Logic.AdminBLL;
 using UI.Logic.Model;
-using UI.Logic.BLL;
 
 namespace Admin.Controllers
 {

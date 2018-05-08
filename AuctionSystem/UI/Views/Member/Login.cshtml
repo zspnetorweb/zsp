@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户登录</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/HAdmin/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/HAdmin/animate.css" rel="stylesheet" />
+    <link href="~/Content/HAdmin/style.css" rel="stylesheet" />
+    <link href="~/Content/HAdmin/login.css" rel="stylesheet" />
+    <script>
+        if (window.top !== window.self) {
+            window.top.location = window.location;
+        }
+    </script>
+</head>
+<body class="signin">
+    <div class="signinpanel">
+        <div class="row">
+            <div class="col-sm-12">
+                <form>
+                    <h4 class="no-margins">用户登录</h4>
+                    <input type="text" class="form-control uname" placeholder="用户名/手机号码" value="@HttpUtility.UrlDecode(ViewBag.UserName)" />
+                    <input type="text" class="form-control pword m-b" placeholder="密码" />
+                    <button class="btn btn-success btn-block">登录</button>
+                    <p class="text-muted text-center">
+                        <a href=""><small>忘记密码了？</small></a>|<a href="/Member/Register"><small>注册一个新账号</small></a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    @* 全局js *@
+    <script src="~/Content/jquery.min.js"></script>
+    <script src="~/Content/bootstrap.min.js"></script>
+</body>
+</html>

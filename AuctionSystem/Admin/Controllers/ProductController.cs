@@ -13,6 +13,7 @@ namespace Admin.Controllers
 		// GET: Product
 		public ActionResult ProductList()
 		{
+
 			return View();
 		}
 

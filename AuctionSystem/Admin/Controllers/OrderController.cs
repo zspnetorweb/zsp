@@ -8,12 +8,12 @@ using Admin.Filter;
 namespace Admin.Controllers
 {
 	[LoginFilter]
-    public class OrderController : Controller
-    {
-        // GET: Order
+	public class OrderController : IBaseController
+	{
+		// GET: Order
 		public ActionResult OrderList()
-        {
-            return View();
-        }
-    }
+		{
+			return View();
+		}
+	}
 }
